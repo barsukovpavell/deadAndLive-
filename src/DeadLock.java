@@ -6,7 +6,7 @@ public class DeadLock {
         new Thread(() -> {
             synchronized(lock1) {
                 try { Thread.sleep(100); } catch (Exception e) {}
-                synchronized(lock2) {} // Ждет lock2
+                synchronized(lock2) {}
             }
         }).start();
 
