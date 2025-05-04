@@ -5,7 +5,7 @@ public class Alternating {
         new Thread(() -> {
             while(true) {
                 if(turn) {
-                    System.out.println("I");
+                    System.out.println("1");
                     turn = false;
                 }
             }
@@ -14,7 +14,7 @@ public class Alternating {
         new Thread(() -> {
             while(true) {
                 if(!turn) {
-                    System.out.println("II");
+                    System.out.println("2");
                     turn = true;
                 }
             }

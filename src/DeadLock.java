@@ -1,18 +1,18 @@
 public class DeadLock {
     public static void main(String[] args) {
-        Object lock1 = new Object();
-        Object lock2 = new Object();
+        Object lockUp1 = new Object();
+        Object lockUp2 = new Object();
 
         new Thread(() -> {
-            synchronized(lock1) {
+            synchronized(lockUp1) {
                 try { Thread.sleep(100); } catch (Exception e) {}
-                synchronized(lock2) {}
+                synchronized(lockUp2) {}
             }
         }).start();
 
         new Thread(() -> {
-            synchronized(lock2) {
-                synchronized(lock1) {}
+            synchronized(lockUp2) {
+                synchronized(lockUp1) {}
             }
         }).start();
     }

@@ -4,14 +4,14 @@ public class LiveLock {
     public static void main(String[] args) {
         new Thread(() -> {
             while(active) {
-                System.out.println("Flow 1");
+                System.out.println("Поток 1");
                 try { Thread.sleep(100); } catch (Exception e) {}
             }
         }).start();
 
         new Thread(() -> {
             while(active) {
-                System.out.println("Flow 2");
+                System.out.println("Поток 2");
                 try { Thread.sleep(100); } catch (Exception e) {}
             }
         }).start();
